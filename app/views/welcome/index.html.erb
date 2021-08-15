@@ -1,2 +1,10 @@
 <h1>Welcome to Reminder</h1>
-<p>An app to send reminders</p>
+<h3>An app to send reminders</h3>
+  <%= form_with url: login_path, local: true do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Sign In" %><br><br>
+  <% end %>
+  <%= link_to 'New to Reminder? Register Here', '/registration' %>
