@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faraday'
 gem 'bcrypt', '~> 3.1.7'
 gem 'turbolinks'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 group :development, :test do
   gem 'pry'
