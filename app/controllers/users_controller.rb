@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def create
     new_user = User.new(user_params)
     if new_user.save
-      flash[:message] = "Welcome to Viewing Party, #{new_user.email}"
       session[:user_id] = new_user.id
       redirect_to dashboard_index_path
     else
