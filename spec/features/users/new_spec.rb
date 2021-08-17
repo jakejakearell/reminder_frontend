@@ -39,7 +39,7 @@ describe "When a user visits the registration path" do
         click_button "Register"
 
         expect(current_path).to eq(users_path)
-        expect(page).to have_content("Email can't be blank, and Email is invalid")
+        expect(page).to have_content("Email can't be blank and Email is invalid")
       end
 
       it "and I cannot create user without an username" do
