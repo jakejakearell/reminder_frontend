@@ -13,8 +13,7 @@ describe "When a user visits the registration path" do
         click_button "Register"
 
         expect(current_path).to eq(dashboard_index_path)
-        expect(page).to have_content("Welcome to Viewing Party, big_dawg")
-        expect(page).to have_button('Discover Movies')
+        expect(page).to have_content("Welcome to Reminder, big_dawg")
       end
     end
 
