@@ -10,8 +10,25 @@
   </head>
 
   <body>
+    <header class="nav-bar">
+      <% if current_user %>
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="https://cdn.pixabay.com/photo/2018/02/28/19/04/r-3188833_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+
+          </a>
+          <h4><%= button_to 'Logout', logout_path, class: "btn btn-warning", method: :delete %></h4>
+        </nav>
+      <% end %>
+    </header>
     <% flash.each do |type, message| %>
-      <%= message %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Incorrect information!</strong> <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
     <% end %>
     <%= yield %>
   </body>
