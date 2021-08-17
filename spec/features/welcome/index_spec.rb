@@ -101,9 +101,9 @@ describe "when a user visits the welcome page" do
      expect(page).to have_button('Sign In')
      click_button 'Sign In'
 
-     expect(page).to have_link('Logout')
+     expect(page).to have_button('Logout')
 
-     click_link 'Logout'
+     click_button 'Logout'
 
      expect(current_path).to eq(root_path)
      expect(page).to have_button('Sign In')
