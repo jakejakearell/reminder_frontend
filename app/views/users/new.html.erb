@@ -1,13 +1,60 @@
-<h3>Create your new account</h3>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-<%= form_with model: @user, local: true do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :username, "Username" %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :reconfirm_password %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Register" %>
-<% end  %>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+
+                 <%= form_with model: @user, local: true do |f| %>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <%= f.label :username, "Username:", class: "form-label" %>
+                      <%= f.text_field :username, class: "form-control" %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <%= f.label :email, "Email:", class: "form-label" %>
+                      <%= f.email_field :email, class: "form-control" %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <%= f.label :password, "Password:", class: "form-label" %>
+                      <%= f.password_field :password, class: "form-control" %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <%= f.label :reconfirm_password,"Confirm Password:", class: "form-label" %>
+                      <%= f.password_field :password_confirmation, class: "form-control" %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <%= f.submit "Register", class: "btn btn-primary mb-2" %>
+                  </div>
+
+                  <% end %>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://cdn.pixabay.com/photo/2017/06/10/07/32/clock-2389255_960_720.png" class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
