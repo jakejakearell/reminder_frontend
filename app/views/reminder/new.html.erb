@@ -1,0 +1,10 @@
+<%= form_with url: reminder_index_path, local: true do |f| %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date, value: Time.now.strftime("%Y-%m-%d") %><br>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %><br>
+  <%= f.label 'Reminder Time' %>
+  <%= f.time_field :time %><br>
+  <%= f.text_area :message, size: "70x5" %><br>
+  <%= f.submit 'Create Reminder'%>
+<% end %>
