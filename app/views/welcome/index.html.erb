@@ -1,29 +1,30 @@
-<body class="text-center"><br><br>
-  <div class="text-center mb-4">
-    <img class="mb-4" src="https://cdn.pixabay.com/photo/2018/02/28/19/04/r-3188833_960_720.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-strong">Welcome to Reminder</h1>
-    <div class="row justify-content-md-center">
-      <div class="col-md-3">
-        <p>An app to send reminders</p>
-      </div>
-    </div>
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <div class="row justify-content-md-center">
-        <div class="col-md-3">
-          <% if !current_user %>
-            <%= form_with url: login_path, local: true do |f| %>
-              <%= f.label :email, class: "staticEmail2" %>
-              <%= f.text_field :email, class: "form-control" %><br>
-              <%= f.label :password, class: "inputPassword2" %>
-              <%= f.password_field :password, class: "form-control" %><br>
-              <%= f.submit "Sign In", class: "btn btn-primary mb-2" %><br><br>
-            <% end %>
-            <%= link_to 'New to Reminder? Register Here', '/registration' %>
-          <% else %>
-            <%= link_to "Dashboard", dashboard_index_path %>
-          <% end %>
-        </div>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container mh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-sm-10">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <img class="mb-4" src="https://cdn.pixabay.com/photo/2018/02/28/19/04/r-3188833_960_720.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-strong">Welcome to Reminder</h1>
+                <p>An app to send reminders</p>
+                <% if !current_user %>
+                  <%= form_with url: login_path, local: true do |f| %>
+                    <%= f.label :email, class: "staticEmail2" %>
+                    <%= f.text_field :email, class: "form-control" %><br>
+                    <%= f.label :password, class: "inputPassword2" %>
+                    <%= f.password_field :password, class: "form-control" %><br>
+                    <%= f.submit "Sign In", class: "btn btn-primary mb-2" %><br><br>
+                  <% end %>
+                  <%= link_to 'New to Reminder? Register Here', '/registration' %>
+                <% else %>
+                  <%= link_to "Dashboard", dashboard_index_path %>
+                <% end %>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
-</body>
+</div>
