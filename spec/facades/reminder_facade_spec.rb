@@ -22,6 +22,30 @@ describe "Reminder Facade" do
           expect(@reminder_facade_instance.valid?).to eq(true)
         end
       end
+
+      describe '#check_all_valid' do
+        it 'returns true when all params are valid' do
+          expect(@reminder_facade_instance.check_all_valid).to eq(true)
+        end
+      end
+
+      describe '#valid_date?' do
+        it 'returns true when date is present and valid' do
+          expect(@reminder_facade_instance.valid_date?).to eq(true)
+        end
+      end
+
+      describe '#valid_time?' do
+        it 'returns true when date is valid' do
+          expect(@reminder_facade_instance.valid_time?).to eq(true)
+        end
+      end
+
+      describe '#valid_message?' do
+        it 'returns true when date is valid' do
+          expect(@reminder_facade_instance.valid_message?).to eq(true)
+        end
+      end
     end
   end
 end
