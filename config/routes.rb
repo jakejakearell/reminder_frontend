@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :users, only: [:new, :create]
   resources :dashboard, only: [:index]
+  resources :reminder, only: [:new, :create]
 
   get "/registration", to: "users#new"
   get "/login", to: "sessions#new"
