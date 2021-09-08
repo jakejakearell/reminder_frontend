@@ -1,1 +1,2 @@
-<p>Welcome to Reminder, <%=current_user.username%></p>
+<h4>Welcome to Reminder, <%=current_user.username%></h4> <br>
+<%= button_to 'New Reminder', 'reminder/new', class: "btn btn-warning", method: :get %>
