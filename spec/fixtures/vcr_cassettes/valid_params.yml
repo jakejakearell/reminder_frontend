@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://beremindermessages.herokuapp.com/api/v1/reminder
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":null,"type":"reminder","attributes":{"time":"09:35","start_date":"2021-09-07","end_date":"2021-09-09","message":"asdfadsf
+        dasdf asd sdfasd f sdfas sdf sd asdf asdf"}}}'
+    headers:
+      User-Agent:
+      - Faraday v1.7.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 10 Sep 2021 16:16:20 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - adb8e69e-4b9e-4d6b-943f-e0f8f7626653
+      X-Runtime:
+      - '0.064829'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 10 Sep 2021 16:16:21 GMT
+recorded_with: VCR 6.0.0
