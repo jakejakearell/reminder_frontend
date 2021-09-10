@@ -11,24 +11,26 @@ describe 'as authenticated user, when I visit the new messages page' do
     end
 
     it 'allows me to fill in the message, start_date, end_date, time fields' do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      VCR.use_cassette("valid_message") do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      visit new_reminder_path
+        visit new_reminder_path
 
-      start_date = Time.now.strftime("%Y-%m-%d")
-      end_date = (Time.now + 172800).strftime("%Y-%m-%d")
-      time = Time.now.strftime("%H:%M")
+        start_date = Time.now.strftime("%Y-%m-%d")
+        end_date = (Time.now + 172800).strftime("%Y-%m-%d")
+        time = Time.now.strftime("%H:%M")
 
-      fill_in :end_date, with: end_date
-      fill_in :start_date, with: start_date
-      fill_in :time, with: time
-      fill_in :message, with: "asdfadsf dasdf asd sdfasd f sdfas sdf sd asdf asdf"
+        fill_in :end_date, with: end_date
+        fill_in :start_date, with: start_date
+        fill_in :time, with: time
+        fill_in :message, with: "asdfadsf dasdf asd sdfasd f sdfas sdf sd asdf asdf"
 
-      click_button 'Create Reminder'
+        click_button 'Create Reminder'
 
-      expect(page).to have_content("Reminder Created")
+        expect(page).to have_content("Reminder Created")
 
-      expect(current_path).to eq(dashboard_index_path)
+        expect(current_path).to eq(dashboard_index_path)
+      end 
     end
   end
 

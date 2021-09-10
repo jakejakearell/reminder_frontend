@@ -19,7 +19,9 @@ describe "Reminder Facade" do
     describe 'instance methods' do
       describe '#valid?' do
         it 'returns true when all params are valid' do
-          expect(@reminder_facade_instance.valid?).to eq(true)
+          VCR.use_cassette("valid_params") do
+            expect(@reminder_facade_instance.valid?).to eq(true)
+          end 
         end
       end
 
