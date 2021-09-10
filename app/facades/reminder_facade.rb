@@ -1,3 +1,5 @@
+require 'json'
+
 class ReminderFacade
   attr_reader :errors
 
@@ -9,10 +11,26 @@ class ReminderFacade
 
   def valid?
     if check_all_valid
+      ReminderService.post_reminder(serializer_reminder)
       true
     else
       false
     end
+  end
+
+  def serializer_reminder
+    ReminderSerializer.new(open_struct_object)
+  end
+
+  def open_struct_object
+    OpenStruct.new({id: nil,
+                    user_id: @user.id,
+                    email: @user.email,
+                    start_date: @params[:start_date],
+                    end_date: @params[:end_date],
+                    time: @params[:time],
+                    message: @params[:message]
+                    })
   end
 
   def check_all_valid
